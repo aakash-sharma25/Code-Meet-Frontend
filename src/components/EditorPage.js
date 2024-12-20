@@ -98,6 +98,7 @@ function EditorPage() {
       socketRef.current.off(ACTIONS.JOINED);
       socketRef.current.off(ACTIONS.DISCONNECTED);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!Location.state) {
@@ -150,12 +151,7 @@ function EditorPage() {
           className={"col-md-2 bg-dark text-light d-flex flex-column"}
           style={isCall ? { width: "25%" } : {}}
         >
-          {/* <img
-            src="/images/codecast.png"
-            alt="Logo"
-            className="img-fluid mx-auto"
-            style={{ maxWidth: "150px", marginTop: "-43px" }}
-          /> */}
+         
           <hr style={{ marginTop: "-3rem" }} />
 
           <div
@@ -181,7 +177,7 @@ function EditorPage() {
           </div>
         </div>
 
-        {/* Editor panel */}
+        
         <div
           className="col-md-10 text-light d-flex flex-column"
           style={isCall ? { width: "70%" } : {}}
@@ -209,14 +205,14 @@ function EditorPage() {
               }}
             />
           )}
-          {/* This is the code change that is made to video call */}
+          
           {socketRef.current && (
             <VideoCall socketRef={socketRef} roomId={roomId} />
           )}
         </div>
       </div>
 
-      {/* Compiler toggle button */}
+     
       <button
         className="btn btn-primary position-fixed bottom-0 end-0 m-3"
         onClick={toggleCompileWindow}
