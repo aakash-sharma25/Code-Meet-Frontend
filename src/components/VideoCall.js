@@ -19,6 +19,7 @@ const VideoCall = ({ socketRef, roomId }) => {
     }
 
     // Join the room for signaling
+    console.log(isCallStarted)
     socketRef.current.emit("join-room", { roomId });
 
     // Handle incoming WebRTC signaling data
@@ -43,12 +44,14 @@ const VideoCall = ({ socketRef, roomId }) => {
       // Clean up listeners
       socketRef.current?.off("offer");
       socketRef.current?.off("answer");
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       socketRef.current?.off("ice-candidate");
       setIsCall(false);
       if (stream) {
         stream.getTracks().forEach((track) => track.stop());
       }
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [socketRef, roomId]);
 
   const initializeMediaStream = async () => {
