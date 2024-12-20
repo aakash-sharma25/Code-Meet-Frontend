@@ -1,0 +1,44 @@
+.codemirror {
+  min-height: "calc(100vh -20px)";
+  font-size: "20px";
+  line-height: "1.6";
+  padding-top: "20px";
+}
+.compile-window {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-height: 40%;
+  background-color: #f8f9fa;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.slide-up {
+  transform: translateY(0);
+}
+
+.slide-down {
+  transform: translateY(100%);
+}
+
+.output-box {
+  height: 150px;
+  background-color: #e9ecef;
+  padding: 10px;
+  overflow-y: auto;
+  border: 1px solid #ced4da;
+}
+
+.homepage {
+  background-image: url("../public/images/videoimg.jpg");
+}
+.text-gradiant {
+  background: -webkit-linear-gradient(312deg, rgba(149,39,247,0.92) 0%, #3816f4 16.625%, #7c22f8 58.278%, transparent 84.233%, rgba(186,10,254,0.91) 100%),
+  -webkit-radial-gradient(#9e48fe 0%, #9b5bfe 100%) 53% 97%/169% 169%;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
