@@ -130,7 +130,7 @@ function EditorPage() {
           language: selectedLanguage,
         }
       );
-      // console.log("Backend response:", response.data);
+      
       setOutput(response.data.output || JSON.stringify(response.data));
     } catch (error) {
       console.error("Error compiling code:", error);
